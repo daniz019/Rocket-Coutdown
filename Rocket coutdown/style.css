@@ -1,0 +1,67 @@
+.lançamento{
+    color:  #6C63FF;
+    font-family: Poppins;
+    font-size: 60px;
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    font-weight: 700px;
+}
+ 
+.foguetão{
+    position: absolute;
+    right: 300px;
+    top: 100px;
+    height: 500px;
+}
+
+.days{
+    position: absolute;
+    top: 330px;
+    left: 150px;
+    font-size: 15px;
+    font-weight: 300px;
+    font-family: Poppins;
+    color: black;
+}
+
+.hours{
+    position: absolute;
+    top: 330px;
+    left: 330px;
+    font-size: 15px;
+    font-weight: 300px;
+    font-family: Poppins;
+    color: black;
+}
+
+.minutes{
+    position: absolute;
+    top: 330px;
+    left: 490px;
+    font-size: 15px;
+    font-weight: 300px;
+    font-family: Poppins;
+    color: black;
+}
+
+.seconds{
+    position: absolute;
+    top: 330px;
+    left: 720px;
+    font-size: 15px;
+    font-weight: 300px;
+    font-family: Poppins;
+    color: black;
+}
+
+.final{
+    position: absolute;
+    bottom: 10px;
+    font-size: 15px;
+    font-weight: 300px;
+    font-family: Poppins;
+    color: black;
+    width: 99%; 
+    text-align: center;
+}

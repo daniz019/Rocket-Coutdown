@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lançamento do foguetão</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Definir um estilo CSS para o elemento */
+        #contador {
+        position: absolute;
+        font-size: 80px;
+        font-weight: 400px;
+        font-family: Poppins;
+        color: black;
+        top: 320px;
+        left: 100px;
+        }
+      </style>
+</head>
+<body bgcolor="#d3d3d3 ">
+
+<br>
+    <h1 id="contador"></h1>
+<br>
+    <h1 class="lançamento">READY TO LAUNCH IN ...</h1>
+<br>
+    <img class="foguetão" src="/assets/rocket.svg"> 
+<br>
+    <h1 class="days">Dias</h1>
+<br>
+    <h1 class="hours">Horas</h1>
+<br>
+    <h1 class="minutes">Minutos</h1>
+<br>
+    <h1 class="seconds">Segundos</h1>
+<br>
+    <p class="final">Feito com 💜 por Daniel</p>
+
+    <script>
+        // Definir a data final da contagem regressiva (dia/mês/ano)
+        let dataFinal = new Date("2023-12-31");
+  
+        // Obter a referência ao elemento HTML
+        let contador = document.getElementById("contador");
+  
+        // Definir a função que atualiza o contador
+        function atualizarContador() {
+          let agora = new Date().getTime();
+          let diferenca = dataFinal.getTime() - agora;
+  
+          // Calcular dias, horas, minutos e segundos
+          let dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+          let horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          let minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+          let segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+  
+          // Exibir a contagem regressiva
+          contador.innerHTML =  dias + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + horas + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + minutos + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + segundos 
+  
+          // Verificar se a data final foi atingida
+          if (diferenca < 0) {
+            clearInterval(intervalID);
+            contador.innerHTML = "Contagem Regressiva Terminada!";
+          }
+        }
+  
+        // Iniciar o intervalo que atualiza o contador a cada segundo
+        let intervalID = setInterval(atualizarContador, 1000);
+      </script>
+</body>
+</html>
